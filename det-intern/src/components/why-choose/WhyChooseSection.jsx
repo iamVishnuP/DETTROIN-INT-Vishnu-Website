@@ -52,7 +52,6 @@ const featuresData = [
 ];
 
 // Key Performance Statistics Strip
-// TODO: Confirm exact statistics numbers from reference site (https://excellenceinternationalschool.com/)
 const statsData = [
   {
     value: '100%',
