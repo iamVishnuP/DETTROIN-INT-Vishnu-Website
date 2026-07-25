@@ -1,9 +1,13 @@
 import React from 'react';
+import CampusFacilities from '../components/facilities/CampusFacilities';
 
+/**
+ * Dedicated Facilities Page (/facilities route)
+ */
 const Facilities = () => {
   return (
-    <div className="flex-grow flex items-center justify-center min-h-[60vh] px-4">
-      <h1 className="text-3xl font-bold text-primary">Facilities</h1>
+    <div className="flex-grow">
+      <CampusFacilities />
     </div>
   );
 };

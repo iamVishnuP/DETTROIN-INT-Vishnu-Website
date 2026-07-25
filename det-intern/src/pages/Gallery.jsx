@@ -1,9 +1,13 @@
 import React from 'react';
+import GallerySection from '../components/gallery/GallerySection';
 
+/**
+ * Dedicated Gallery Page (/gallery route)
+ */
 const Gallery = () => {
   return (
-    <div className="flex-grow flex items-center justify-center min-h-[60vh] px-4">
-      <h1 className="text-3xl font-bold text-primary">Gallery</h1>
+    <div className="flex-grow">
+      <GallerySection />
     </div>
   );
 };

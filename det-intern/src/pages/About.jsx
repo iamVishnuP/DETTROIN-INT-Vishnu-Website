@@ -1,9 +1,15 @@
 import React from 'react';
+import AboutSection from '../components/about/AboutSection';
+import WhyChooseSection from '../components/why-choose/WhyChooseSection';
 
+/**
+ * Dedicated About Page (/about route)
+ */
 const About = () => {
   return (
-    <div className="flex-grow flex items-center justify-center min-h-[60vh] px-4">
-      <h1 className="text-3xl font-bold text-primary">About</h1>
+    <div className="flex-grow">
+      <AboutSection />
+      <WhyChooseSection />
     </div>
   );
 };
