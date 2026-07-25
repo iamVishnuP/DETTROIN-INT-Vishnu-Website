@@ -1,9 +1,13 @@
 import React from 'react';
+import ContactSection from '../components/contact/ContactSection';
 
+/**
+ * Dedicated Contact Page (/contact route)
+ */
 const Contact = () => {
   return (
-    <div className="flex-grow flex items-center justify-center min-h-[60vh] px-4">
-      <h1 className="text-3xl font-bold text-primary">Contact</h1>
+    <div className="flex-grow">
+      <ContactSection />
     </div>
   );
 };
