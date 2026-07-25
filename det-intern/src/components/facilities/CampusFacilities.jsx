@@ -14,13 +14,13 @@ import facility6 from '../../assets/images/why they best2.webp';
 
 const facilitiesData = [
   {
-    image: facility1,
+    image: facility2,
     title: 'Interactive Smart Classrooms',
     icon: Monitor,
     description: 'Equipped with interactive digital smart boards, multimedia tools, and ergonomic seating for immersive modern learning.',
   },
   {
-    image: facility2,
+    image: facility1,
     title: 'Science & Robotics Labs',
     icon: FlaskConical,
     description: 'Well-equipped Physics, Chemistry, and Biology laboratories allowing students to conduct hands-on experiments safely.',
@@ -32,7 +32,7 @@ const facilitiesData = [
     description: 'Contemporary computer labs with high-speed connectivity, fostering digital literacy, coding, and academic research skills.',
   },
   {
-    image: facility4,
+    image: facility6,
     title: 'Library & Learning Resource Center',
     icon: BookOpen,
     description: 'An extensive collection of textbooks, reference volumes, educational journals, and quiet spaces designed to ignite reading habits.',
@@ -44,7 +44,7 @@ const facilitiesData = [
     description: 'Dedicated sports grounds and indoor activity areas promoting physical fitness, teamwork, sportsmanship, and athletics.',
   },
   {
-    image: facility6,
+    image: facility4,
     title: 'Safe Fleet Transport & CCTV Security',
     icon: ShieldCheck,
     description: 'GPRS-tracked fleet of safe school buses supervised by trained attendants, backed by 24/7 campus CCTV surveillance.',
@@ -57,6 +57,7 @@ const facilitiesData = [
  */
 const CampusFacilities = () => {
   return (
+   
     <section id="facilities" className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 sm:py-20 lg:py-28 overflow-hidden">
       
       {/* Soft Decorative Glow Background Elements */}
@@ -92,6 +93,7 @@ const CampusFacilities = () => {
 
       </Container>
     </section>
+  
   );
 };
 

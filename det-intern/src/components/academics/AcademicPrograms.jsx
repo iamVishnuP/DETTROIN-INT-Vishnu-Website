@@ -12,7 +12,7 @@ import stage4 from '../../assets/images/acdemy-stage4.webp';
 
 const programsData = [
   {
-    image: stage1,
+    image: stage4,
     title: 'Pre-Primary Foundation',
     gradeRange: 'Nursery – UKG',
     icon: Sparkles,
@@ -26,14 +26,14 @@ const programsData = [
     description: 'Building core competencies in Mathematics, Science, Environmental Studies, and Languages through interactive discovery.',
   },
   {
-    image: stage3,
+    image: stage1,
     title: 'Middle School Program',
     gradeRange: 'Class VI – VIII',
     icon: Compass,
     description: 'Fostering critical thinking, scientific inquiry, digital skills, and collaborative projects in preparation for higher studies.',
   },
   {
-    image: stage4,
+    image: stage3,
     title: 'Secondary Education (CBSE)',
     gradeRange: 'Class IX – X',
     icon: GraduationCap,

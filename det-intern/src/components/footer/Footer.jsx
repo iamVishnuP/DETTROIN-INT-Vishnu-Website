@@ -55,7 +55,6 @@ const Footer = () => {
                 { label: 'About Us', path: '/about' },
                 { label: 'Academics', path: '/academics' },
                 { label: 'Facilities', path: '/facilities' },
-                { label: 'Gallery', path: '/gallery' },
                 { label: 'Admissions', path: '/admissions' },
                 { label: 'Contact Us', path: '/contact' },
               ].map((link) => (

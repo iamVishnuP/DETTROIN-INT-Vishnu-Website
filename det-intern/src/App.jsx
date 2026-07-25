@@ -9,7 +9,6 @@ const About = lazy(() => import('./pages/About'));
 const Admissions = lazy(() => import('./pages/Admissions'));
 const Academics = lazy(() => import('./pages/Academics'));
 const Facilities = lazy(() => import('./pages/Facilities'));
-const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -24,7 +23,6 @@ function App() {
             <Route path="admissions" element={<Admissions />} />
             <Route path="academics" element={<Academics />} />
             <Route path="facilities" element={<Facilities />} />
-            <Route path="gallery" element={<Gallery />} />
             <Route path="contact" element={<Contact />} />
             {/* Catch-all route displaying friendly 404 Page */}
             <Route path="*" element={<NotFound />} />
