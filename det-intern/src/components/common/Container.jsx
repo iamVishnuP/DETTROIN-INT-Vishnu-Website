@@ -1,0 +1,18 @@
+import React from 'react';
+
+/**
+ * Reusable Container Component
+ * Enforces consistent max-width and horizontal padding across all pages.
+ */
+const Container = ({ children, className = '', ...props }) => {
+  return (
+    <div
+      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Container;
