@@ -1,15 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
+import ScrollToTop from '../components/footer/ScrollToTop';
+import FloatingWhatsApp from '../components/footer/FloatingWhatsApp';
 
 /**
  * Main Layout Component
- * Integrates Top Bar and Sticky Header Navigation around page content.
+ * Integrates Header, Page Content, Footer, and Floating Utilities.
  */
 const MainLayout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-800 font-body">
-      {/* Header System (TopBar + Navbar) */}
+    <div className="min-h-screen flex flex-col bg-neutral-50 text-neutral-800 font-body relative">
+      {/* Header System (TopBar + Sticky Navbar) */}
       <Header />
       
       {/* Dynamic Page Content */}
@@ -17,7 +20,12 @@ const MainLayout = ({ children }) => {
         {children || <Outlet />}
       </main>
 
-      {/* Future Footer will be added in upcoming commits */}
+      {/* Website Footer */}
+      <Footer />
+
+      {/* Floating Utilities */}
+      <ScrollToTop />
+      <FloatingWhatsApp />
     </div>
   );
 };
