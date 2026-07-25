@@ -5,10 +5,11 @@ import WhyChooseSection from '../components/why-choose/WhyChooseSection';
 import AcademicPrograms from '../components/academics/AcademicPrograms';
 import CampusFacilities from '../components/facilities/CampusFacilities';
 import GallerySection from '../components/gallery/GallerySection';
+import TestimonialsSection from '../components/testimonials/TestimonialsSection';
 
 /**
  * Home Page
- * Renders Hero (Commit 3), About (Commit 4), WhyChoose (Commit 5), AcademicPrograms (Commit 6), CampusFacilities (Commit 7), and GallerySection (Commit 8).
+ * Renders Hero (Commit 3), About (Commit 4), WhyChoose (Commit 5), AcademicPrograms (Commit 6), CampusFacilities (Commit 7), GallerySection (Commit 8), and TestimonialsSection (Commit 9).
  * Future homepage sections will be appended below in upcoming commits.
  */
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <AcademicPrograms />
       <CampusFacilities />
       <GallerySection />
+      <TestimonialsSection />
     </div>
   );
 };
