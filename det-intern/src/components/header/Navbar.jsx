@@ -6,9 +6,6 @@ import Button from '../common/Button';
 import NavigationLink from './NavigationLink';
 import MobileMenu from './MobileMenu';
 
-// TODO: Import local school logo from src/assets/images once logo image filename is finalized
-// Example: import schoolLogo from '../../assets/images/logo.png';
-
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
@@ -20,13 +17,12 @@ const navItems = [
 
 /**
  * Navbar Component
- * Premium sticky navigation header with scroll-reactive padding and shadow effects.
+ * Glassmorphic sticky navigation header with smooth backdrop blur while scrolling.
  */
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Monitor window scroll to adjust navbar height and elevation
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -44,8 +40,8 @@ const Navbar = () => {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-slate-100'
-          : 'bg-white py-4 sm:py-5 border-b border-slate-100/70 shadow-sm'
+          ? 'bg-white/70 backdrop-blur-md shadow-lg py-3 border-b border-white/40 ring-1 ring-black/5'
+          : 'bg-white py-4 sm:py-5 border-b border-slate-100 shadow-sm'
       }`}
     >
       <Container>
@@ -57,12 +53,10 @@ const Navbar = () => {
             className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg group"
             aria-label="Excellence International School Home"
           >
-            {/* Logo Emblem Placeholder / Shield Icon */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-primary text-accent flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200">
               <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
 
-            {/* School Name & Tagline */}
             <div className="flex flex-col">
               <span className="font-heading font-extrabold text-primary text-base sm:text-lg lg:text-xl tracking-tight leading-none group-hover:text-secondary transition-colors duration-200">
                 EXCELLENCE

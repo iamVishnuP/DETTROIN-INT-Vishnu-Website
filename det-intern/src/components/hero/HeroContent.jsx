@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Compass, Sparkles } from 'lucide-react';
 import Button from '../common/Button';
 import TrustIndicators from './TrustIndicators';
 
 /**
  * HeroContent Component
- * Left-column copy, headline, CTA buttons, and trust badges with entrance animations.
+ * Headline, copy, CTA buttons, and trust badges with refined entrance animations.
  */
 const HeroContent = () => {
-  // Animation variants
+  const shouldReduceMotion = useReducedMotion();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -23,7 +24,7 @@ const HeroContent = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
     visible: {
       opacity: 1,
       y: 0,
@@ -35,24 +36,25 @@ const HeroContent = () => {
     <motion.div
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
-      className="flex flex-col justify-center space-y-6 sm:space-y-8 max-w-2xl lg:max-w-none"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+      className="flex flex-col justify-center space-y-6 sm:space-y-8 max-w-3xl"
     >
-      {/* Aspirational Tagline Pill */}
+      {/* Tagline Pill */}
       <motion.div variants={itemVariants} className="inline-flex">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-accent text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md shadow-sm">
           <Sparkles className="w-4 h-4 text-accent" />
-          <span>Excellence International School • Aligarh</span>
+          <span className="text-slate-100">Excellence International School • Aligarh</span>
         </div>
       </motion.div>
 
       {/* Main Headline */}
       <motion.h1
         variants={itemVariants}
-        className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-[1.12]"
+        className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]"
       >
         Shaping Future Leaders Through{' '}
-        <span className="bg-gradient-to-r from-secondary to-blue-600 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-amber-300 via-accent to-amber-400 bg-clip-text text-transparent">
           Quality Education
         </span>
       </motion.h1>
@@ -60,7 +62,7 @@ const HeroContent = () => {
       {/* Supporting Subtitle */}
       <motion.p
         variants={itemVariants}
-        className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed max-w-xl"
+        className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl"
       >
         Empowering young minds with world-class CBSE curriculum, state-of-the-art facilities, and a supportive environment dedicated to academic excellence and holistic character growth.
       </motion.p>
@@ -74,7 +76,7 @@ const HeroContent = () => {
           <Button
             variant="accent"
             size="lg"
-            className="w-full sm:w-auto font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto font-bold shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-200 flex items-center justify-center gap-2 group"
           >
             <span>Apply for Admission</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -83,11 +85,11 @@ const HeroContent = () => {
 
         <NavLink to="/facilities" className="w-full sm:w-auto">
           <Button
-            variant="outline"
+            variant="ghost"
             size="lg"
-            className="w-full sm:w-auto font-semibold hover:bg-slate-100/80 border-slate-300 text-primary transition-all duration-200 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200 flex items-center justify-center gap-2"
           >
-            <Compass className="w-5 h-5 text-secondary" />
+            <Compass className="w-5 h-5 text-accent" />
             <span>Explore Campus</span>
           </Button>
         </NavLink>

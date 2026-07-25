@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -8,13 +8,15 @@ import { Link } from 'react-router-dom';
  * Displays a campus facility with local photography, icon, title, description, and hover elevation.
  */
 const FacilityCard = ({ image, title, description, icon: Icon, delay = 0 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-30px' }}
-      transition={{ duration: 0.5, delay: delay, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, delay: delay, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={shouldReduceMotion ? {} : { y: -6 }}
       className="bg-white rounded-2xl border border-slate-100 shadow-subtle hover:shadow-premium transition-all duration-300 flex flex-col justify-between overflow-hidden group h-full"
     >
       <div>

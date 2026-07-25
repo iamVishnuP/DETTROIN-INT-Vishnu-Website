@@ -1,18 +1,20 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 /**
  * StatsCard Component
- * Displays a single key performance metric / statistic card with icon and descriptive label.
+ * Displays a key performance metric card with icon and scroll animation.
  */
 const StatsCard = ({ value, label, description, icon: Icon, delay = 0 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: '-30px' }}
-      transition={{ duration: 0.5, delay: delay }}
-      whileHover={{ y: -4 }}
+      initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95, y: shouldReduceMotion ? 0 : 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, delay: delay, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={shouldReduceMotion ? {} : { y: -4 }}
       className="bg-primary text-white p-6 sm:p-7 rounded-2xl shadow-lg border border-white/10 flex flex-col justify-center items-center text-center group hover:border-accent/40 transition-all duration-300 relative overflow-hidden"
     >
       {/* Background Accent Glow */}

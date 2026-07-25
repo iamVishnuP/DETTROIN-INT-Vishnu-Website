@@ -22,15 +22,15 @@ const trustItems = [
  */
 const TrustIndicators = () => {
   return (
-    <div className="pt-4 border-t border-slate-200/60 flex flex-wrap items-center gap-y-3 gap-x-6 sm:gap-x-8">
+    <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-y-3 gap-x-6 sm:gap-x-8">
       {trustItems.map((item, index) => {
         const IconComponent = item.icon;
         return (
           <div key={index} className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-accent/15 text-accent-hover flex items-center justify-center flex-shrink-0">
-              <IconComponent className="w-4 h-4 text-primary" />
+            <div className="w-7 h-7 rounded-full bg-white/15 text-accent flex items-center justify-center flex-shrink-0 border border-white/10">
+              <IconComponent className="w-4 h-4 text-accent" />
             </div>
-            <span className="text-xs sm:text-sm font-semibold text-neutral-700">
+            <span className="text-xs sm:text-sm font-semibold text-slate-200">
               {item.text}
             </span>
           </div>
